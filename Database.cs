@@ -14,12 +14,13 @@ namespace fr34kyn01535.ItemVault
             MySqlConnection result = null;
             try
             {
-                result = new MySqlConnection(string.Format("SERVER={0};DATABASE={1};UID={2};PASSWORD={3};", new object[]
+                result = new MySqlConnection(string.Format("SERVER={0};DATABASE={1};UID={2};PASSWORD={3};PORT={4};", new object[]
                 {
                     ItemVault.Instance.Configuration.Instance.DatabaseAddress,
                     ItemVault.Instance.Configuration.Instance.DatabaseName,
                     ItemVault.Instance.Configuration.Instance.DatabaseUsername,
-                    ItemVault.Instance.Configuration.Instance.DatabasePassword
+                    ItemVault.Instance.Configuration.Instance.DatabasePassword,
+                    ItemVault.Instance.Configuration.Instance.DatabasePort
                 }));
                 return result;
             }
